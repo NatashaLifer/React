@@ -1,0 +1,8 @@
+.accordion-item-description {
+    display: none;
+}
+
+.accordion-item-description.active{
+    display: inline-block;
+}
+

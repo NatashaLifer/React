@@ -1,0 +1,9 @@
+.todo {
+    &__title,
+    &__wrapper-list {
+        text-align: center;
+    }
+    &-item span {
+        margin-left: 5px;
+    }
+}
