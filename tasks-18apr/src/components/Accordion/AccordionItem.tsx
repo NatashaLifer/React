@@ -17,8 +17,6 @@ const AccordionItem: FC<AccordionItemProps> = ({title, description}) => {
             </h2>
             <p className={visibilityItem}>{description}</p>
         </li>
-
-        
     )
 }
 

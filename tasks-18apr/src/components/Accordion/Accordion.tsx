@@ -3,7 +3,7 @@
 // На екрані за замовчуванням показується тільки title. 
 // По кліку на тайтл - відображається/ховається description 
 
-import {FC} from 'react'
+import { FC  } from 'react'
 import { AccProps } from './types'
 import AccordionItem from "./AccordionItem"
 import './Accordion.css'

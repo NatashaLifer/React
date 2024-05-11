@@ -1,0 +1,21 @@
+.tabs-wrapper {
+    margin: 0 auto;
+}
+
+.tabs__header {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.tabs__header-item{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.tabs__header-item.active{
+    color: #2b72fb;
+    border-bottom: 2px solid #2b72fb  
+}
+
+.tabs__body-item {
+    margin-top: 25px;
+}

@@ -1,13 +1,22 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import Header from "./components/Header/Header"
 import Todo from "./components/Todo/Todo"
 import Modal from "./components/Modal/Modal"
+import Timer, {DIRECTION} from "./components/Timer/Timer"
 import logo from "./assets/bird-logo.avif"
 import './App.scss'
 
 function App() {
   const [counterValue, setCounterValue] = useState(0)
-  const [modalVisible, setModalVisible] = useState(false)
+
+  const [modalVisible, setModalVisible] = useState(JSON.parse(localStorage.getItem('isOpen') || 'false'))
+
+  // - в батьківському компоненті зберігати всі маніпуляції зі стейтом `isOpen` в `localStorage`
+
+  useEffect(() => {
+    localStorage.setItem('isOpen', JSON.stringify(modalVisible))
+  }, [modalVisible])
+  
   const menuItems = [
     {title:'Home', link:'#'},
     {title:'Contacts', link:'#'},
@@ -18,12 +27,21 @@ function App() {
   return (
     <>
       <Header logoURL={logo} menuItems={menuItems}/>
+      <div className="modal-open">
+        <button className="modal-open-btn"
+          onClick={() => setModalVisible((prev:any) => !prev)}
+        > open modal </button>
+      </div>
 
-      <button className="modal-close-btn"
-        onClick={() => setModalVisible((prev) => !prev)}
-      > X </button>
-      {modalVisible && <Modal>
-        <p>Gogi loves to code</p>
+      {modalVisible && <Modal isOpen={setModalVisible}>
+        <h2>Gogi loves to code</h2>
+        <Timer  
+          startValue={7} 
+          endValue={1} 
+          step={1} 
+          direction={DIRECTION.DECREMENT} 
+          endTimeAction={() => setModalVisible(false)}
+        />
       </Modal>}
       
       <Todo />

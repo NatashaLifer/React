@@ -65,3 +65,26 @@ button {
   }
 }
 
+.modal-open {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+
+  &-btn {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    margin-right: 2.8em;
+
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+
+    background-color: var(--primary-color);
+    color: var(--white);
+  
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+}
+

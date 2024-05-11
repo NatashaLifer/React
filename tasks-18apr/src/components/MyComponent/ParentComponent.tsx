@@ -13,7 +13,7 @@ import ChildComponent from "./ChildComponent"
 const ParentComponent = () => {
     const [value, setValue] = useState("gogi")
 
-    const changeTitle = () => {
+    const handleTitleChange = () => {
         setValue(prevValue => {
             if(prevValue === "gogi") return "fofi"
             return "gogi"
@@ -21,14 +21,12 @@ const ParentComponent = () => {
     }
 
     return (
-        <>
-            <div className='main'>
-                <ChildComponent
-                    title = {value}
-                    newTitle={changeTitle}
-                />
-            </div>
-        </>
+        <div className='main'>
+            <ChildComponent
+                title = {value}
+                changeTitle={handleTitleChange}
+            />
+        </div>
     )
 }
   
