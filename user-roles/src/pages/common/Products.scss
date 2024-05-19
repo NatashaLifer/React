@@ -1,0 +1,19 @@
+.products {
+    &__item {
+        display:flex;
+        justify-content:center;
+        gap: 3em;
+        margin: 15px 0;
+
+        &-buy{
+            background-color: var(--white);
+            border: solid 2px var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.2rem 1rem;
+            margin: 13px 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+    }
+}

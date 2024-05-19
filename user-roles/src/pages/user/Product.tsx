@@ -1,7 +1,8 @@
+// Product - "/catalog/:id" - сторінка товару. має містити фото товару, назву, ціну, опис та кнопку "купити"
+
 import { useState, useEffect } from  'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { ProductProps } from './types'
+import { ProductProps } from '../types'
 import './Product.scss'
 
 const Product = () => {
@@ -15,20 +16,10 @@ const Product = () => {
         })
     },[])
     
-    const addToLocalStorage = (key:string, prod:ProductProps) => {
-        let cartList:ProductProps[] = []
-        const storage = localStorage.getItem(key)
-        if(storage){
-            const storageData = JSON.parse(storage) 
-            localStorage.setItem(key, JSON.stringify([...storageData, prod]))
-        } else {
-            cartList = [prod]
-            localStorage.setItem(key, JSON.stringify(cartList))
-        }
-    }
     
     return (
         <div className='wrapper'>
+            <h2>Product</h2>
             {currentProduct && (  
                 <div className='product-card'>
                     <img src="https://i.pravatar.cc" className='product-card__img' alt="image equipment" />
@@ -36,12 +27,7 @@ const Product = () => {
                         <h2 className='product-card__title'> {currentProduct.title} </h2>
                         <p className='product-card__description'> {currentProduct.description} </p>
                         <p className='product-card__price'> ${currentProduct.price} </p>
-                        <Link to='/cart'
-                            className='product-card__btn-buy'
-                            onClick={() => {
-                                addToLocalStorage ("selectedProds", currentProduct)
-                            }}
-                        > Buy </Link>
+                        <button className='product-card__btn-buy'> Buy </button>
                     </div>
                 </div>
             )}

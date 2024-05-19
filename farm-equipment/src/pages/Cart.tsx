@@ -1,11 +1,10 @@
-// Cart - "/cart" - список товарів які користувач вибрав для покупки. кожен товар має мати кнопку "видалити"
 import './Cart.scss'
 import { ProductProps } from './types'
 
 
 const Cart = () => {
     let cartList:ProductProps[] = []
-        const storage = localStorage.getItem('selectedProds')//достаємо по ключу з localStorage товари, що там є
+        const storage = localStorage.getItem('selectedProds')
         if(storage){
             cartList = JSON.parse(storage)
         }

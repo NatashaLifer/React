@@ -5,7 +5,6 @@
 
 body {
   margin: 0;
-  padding-bottom: 40px;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--white);
@@ -33,19 +32,16 @@ a {
   color: inherit;
 }
 
-footer {
-  text-align: center;
-  margin-bottom: 30px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 button {
   border: none;
   background-color: transparent;
   cursor: pointer;
   color: inherit;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .btn-return-home {
